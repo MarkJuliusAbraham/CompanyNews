@@ -16,3 +16,38 @@
   font-weight: 650;
   letter-spacing: -0.01em;
 }
+
+.connection-test {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.connection-test button {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-raised);
+  cursor: pointer;
+}
+
+.connection-test button:hover:enabled {
+  background: var(--surface-hover);
+}
+
+.connection-test button:disabled {
+  cursor: wait;
+}
+
+.connection-status {
+  color: var(--text-muted);
+}
+
+.connection-status.connected {
+  color: var(--good-text);
+}
+
+.connection-status.failed {
+  color: var(--critical-text);
+}

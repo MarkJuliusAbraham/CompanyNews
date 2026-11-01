@@ -1,4 +1,7 @@
+from collections.abc import Iterator
+
 from sqlalchemy import URL, create_engine
+from sqlalchemy.orm import Session, sessionmaker
 
 from app.config import settings
 
@@ -11,4 +14,10 @@ url = URL.create(
     database=settings.postgres_db,
 )
 
-engine = create_engine(url, connect_args={"connect_timeout": 3})
+engine = create_engine(url, pool_pre_ping=True, connect_args={"connect_timeout": 3})
+SessionLocal = sessionmaker(engine)
+
+
+def get_db() -> Iterator[Session]:
+    with SessionLocal() as session:
+        yield session
