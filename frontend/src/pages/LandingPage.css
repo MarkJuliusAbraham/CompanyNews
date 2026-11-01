@@ -1,0 +1,18 @@
+.landing {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.landing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.landing-header h1 {
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
