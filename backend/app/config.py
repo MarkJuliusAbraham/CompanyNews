@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     postgres_db: str
     postgres_host: str = "localhost"
     postgres_port: int = 5433
+    gnews_api_key: str = ""
 
 
 settings = Settings()
